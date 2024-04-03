@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 dotenv.config();
 export const createChat = async (prompt: string) => {
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY); // Instantiate GenerativeAI
-
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const result = await model.generateContent(prompt);
